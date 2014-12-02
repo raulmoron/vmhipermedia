@@ -15,7 +15,7 @@ Contains:
 Clone this repo
 
 ```bash
-git clone --recursive https://github.com/Konuko/vmhipermedia.git vmHipermedia
+git clone --recursive https://github.com/raulmoron/vmhipermedia.git vmHipermedia
 cd vmHipermedia
 vagrant up
 ```
