@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `hipermedia`.`playlist` (
   `playlist_id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(50) NOT NULL,
   `last_update` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`country_id`))
+  PRIMARY KEY (`playlist_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
