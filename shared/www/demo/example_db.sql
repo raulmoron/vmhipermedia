@@ -41,6 +41,6 @@ DROP TABLE IF EXISTS `hipermedia`.`music_playlist` ;
 CREATE TABLE IF NOT EXISTS `hipermedia`.`music_playlist` (
   `playlist_id` SMALLINT UNSIGNED NOT NULL,
   `music_id` SMALLINT UNSIGNED NOT NULL,
-  PRIMARY KEY (`playlist_id`,`music_id`),
+  PRIMARY KEY (`playlist_id`,`music_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
