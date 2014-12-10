@@ -1,4 +1,0 @@
-[Tue Dec 02 15:53:56 2014] [error] [client 192.168.33.1] script '/www/index.php' not found or unable to stat
-[Tue Dec 02 16:19:48 2014] [error] [client 192.168.33.1] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /www/index.php on line 3
-[Tue Dec 02 16:19:59 2014] [error] [client 192.168.33.1] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /www/index.php on line 3
-[Tue Dec 02 16:21:39 2014] [error] [client 192.168.33.1] PHP Parse error:  syntax error, unexpected T_ECHO in /www/index.php on line 5
