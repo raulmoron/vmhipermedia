@@ -10,6 +10,15 @@ Contains:
 * MySQL
 * PHP (with some useful packages)
 
+## Requires
+*Windows:*
+Git Bash http://git-scm.com/ to clone the repository ans work its
+Terminal of Windows to up the machine. (this point is important to work it correctly with vagrant)
+
+*OSX:*
+Terminal and Git installed (see XCode)
+
+
 ## Installation
 
 Clone this repo
@@ -22,7 +31,7 @@ vagrant up
 
 ## Usage
 
-* **Step 1.** **Add the `192.168.33.10` addresses in your `/etc/hosts` file**
+* **Step 1.** **Add the `192.168.33.10` addresses in your `/etc/hosts` file with our domains (in this case hipermdia.local)**
 
 * **Step 2.** **Open the browser**
 Now, you can reach the webroot with `http://hipermedia.local`
@@ -54,6 +63,13 @@ You'll have two shared folders inside `shared` folder on project root:
 * `logs`: Logs from Apache and MySQL will be stored here.
 
 This two folders will be mapped on root (`/`) folder on your guest Virtual Machine with full permissions (777).
+
+## phpMyAdmin
+Compatible with phpMyAdmin 4.0.10.7
+http://www.phpmyadmin.net/home_page/downloads.php
+
+## Documents
+**Git Tutorials:** https://www.atlassian.com/git/
 
 ## Credits
 

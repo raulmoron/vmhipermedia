@@ -19,24 +19,6 @@ file { "/etc/php.d/xdebug.ini":
 # Adding EPEL repo. We'll use later to install Redis class.
 class { 'epel': }
 
-# Bind (DNS) Server to allow resolving all *.vm and *.local addresses to VM.
-# Note: You should point to the VM as main DNS server on the host machine.
-class { 'bind::server': chroot => false }
-bind::server::conf { '/etc/named.conf':
-	listen_on_addr => [ 'any' ],
-	allow_query => [ 'any' ],
-    forwarders => [ '8.8.8.8', '8.8.4.4' ],
-    zones => {
-        'vm.' => [
-            'type master',
-            'file "local"',
-        ],
-    },
-}
-bind::server::file { 'local.vm':
-    source  => '/vagrant/files/templates/bind.txt',
-}
-
 # Miscellaneous packages.
 $misc_packages = ['vim-enhanced','telnet','zip','unzip','git','screen','libssh2','libssh2-devel', 'gcc', 'gcc-c++', 'autoconf', 'automake']
 package { $misc_packages: ensure => latest }
