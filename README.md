@@ -31,7 +31,7 @@ vagrant up
 
 ## Usage
 
-* **Step 1.** **Add the `192.168.33.10` addresses in your `/etc/hosts` file with our domains (in this case hipermdia.local)**
+* **Step 1.** **Add the `192.168.33.10` addresses in your `/etc/hosts` file with our domains (in this case hipermedia.local)**
 
 * **Step 2.** **Open the browser**
 Now, you can reach the webroot with `http://hipermedia.local`
@@ -67,6 +67,10 @@ This two folders will be mapped on root (`/`) folder on your guest Virtual Machi
 ## phpMyAdmin
 Compatible with phpMyAdmin 4.0.10.7
 http://www.phpmyadmin.net/home_page/downloads.php
+
+*Access data*
+user: hiper_db_user
+password: 123456
 
 ## Documents
 **Git Tutorials:** https://www.atlassian.com/git/
