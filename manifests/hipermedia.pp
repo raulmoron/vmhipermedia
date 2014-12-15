@@ -63,15 +63,26 @@ apache::vhost { 'centos.local':
     docroot_group	=> 'vagrant',
 }
 
+apache::vhost { 'api.hipermedia.local':
+    serveraliases   => ['*.api.hipermedia.local'],
+    priority        => '2',
+    port            => '80',
+    template    => '/vagrant/files/templates/apache/vhost-api.conf.erb',
+    docroot         => '/www/api',
+    docroot_owner => 'vagrant',
+    docroot_group => 'vagrant',
+}
+
 apache::vhost { 'hipermedia.local':
     serveraliases   => ['*.hipermedia.local'],
     priority        => '5',
     port            => '80',
-    template    => '/vagrant/files/templates/apache/vhost-sifo.conf.erb',
+    template    => '/vagrant/files/templates/apache/vhost-hipermedia.conf.erb',
     docroot         => '/www',
     docroot_owner => 'vagrant',
     docroot_group => 'vagrant',
 }
+
 # MySQL packages and some configuration to automatically create a new database.
 class { 'mysql': }
 

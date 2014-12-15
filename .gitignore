@@ -5,3 +5,6 @@
 .vagrant/machines/default/virtualbox/synced_folders
 shared/logs/.DS_Store
 shared/www/.DS_Store
+.DS_Store
+shared/www/phpmyadmin/*
+*.log

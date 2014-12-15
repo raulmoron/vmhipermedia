@@ -15,11 +15,6 @@ NameVirtualHost <%= vhost_name %>:<%= port %>
 <%= "  ServerAlias #{serveraliases}" %>
 <% end -%>
   DocumentRoot <%= docroot %>
-  <FilesMatch "\.(ttf|otf|eot|woff)$">
-    <IfModule mod_headers.c>
-      Header set Access-Control-Allow-Origin "*"
-    </IfModule>
-  </FilesMatch>
   <Directory <%= docroot %>>
     Options FollowSymLinks MultiViews
     AllowOverride <%= Array(override).join(' ') %>
@@ -32,6 +27,8 @@ NameVirtualHost <%= vhost_name %>:<%= port %>
   ServerSignature Off
 
   RewriteEngine On
-  # Rewrite path to include dynamic revision.
-  RewriteRule ^(.*)rev-[0-9a-z]+\.(.*)\.(js|css)$ $1$2.$3 [L]
+  # Redirect all requests that doesn't match an existent file or directory to PHP dispatcher.
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-d
+  RewriteRule ^/(.+)$ /index.php?request=$1 [QSA,L]
 </VirtualHost>
