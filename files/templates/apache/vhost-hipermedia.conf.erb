@@ -30,5 +30,6 @@ NameVirtualHost <%= vhost_name %>:<%= port %>
   # Redirect all requests that doesn't match an existent file or directory to PHP dispatcher.
   RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-f
   RewriteCond %{DOCUMENT_ROOT}%{REQUEST_FILENAME} !-d
-  RewriteRule ^/(.+) /index.php [QSA,L]
+  # RewriteRule ^/(.+) /index.php [QSA,L]
+  RewriteRule ^/(.+)$ /index.php?request=$1 [QSA,L]
 </VirtualHost>
